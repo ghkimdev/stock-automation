@@ -1,5 +1,7 @@
 # stock-automation
 
+[![Tests](https://github.com/ghkimdev/stock-automation/actions/workflows/test.yml/badge.svg)](https://github.com/ghkimdev/stock-automation/actions/workflows/test.yml)
+
 주식 기술적 지표 기반 매매 신호 생성 및 백테스팅 시스템
 
 ## 기능
