@@ -1,0 +1,10 @@
+{
+  "sessionCount": 2,
+  "lastSession": {
+    "startedAt": "2026-02-27T00:00:00.000Z",
+    "platform": "claude",
+    "level": "Script"
+  },
+  "currentFeature": "stock-automation",
+  "phase": "design"
+}
