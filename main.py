@@ -44,9 +44,12 @@ def backtest_ticker(ticker: str, start: str, end: str) -> None:
     print(f"{'='*50}")
     try:
         result = run_backtest(ticker, start, end)
-        print(f"  수익률  : {result.total_return:+.2f}%")
-        print(f"  매매 횟수: {result.trade_count}회")
-        print(f"  승률    : {result.win_rate:.1f}%")
+        print(f"  수익률    : {result.total_return:+.2f}%")
+        print(f"  최대 낙폭  : -{result.max_drawdown:.2f}%")
+        print(f"  매매 횟수  : {result.trade_count}회")
+        print(f"  승률      : {result.win_rate:.1f}%")
+        print(f"  손절 청산  : {result.stop_loss_hits}회")
+        print(f"  목표가 달성: {result.target_hits}회")
         print(f"\n  [매매 신호 내역]")
         print_signals(result.signals)
     except (DataFetchError, InsufficientDataError) as exc:
