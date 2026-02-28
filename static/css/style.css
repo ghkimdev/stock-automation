@@ -1,0 +1,284 @@
+/* ── Reset & Base ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #0d1117;
+  color: #c9d1d9;
+  font-size: 14px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header ──────────────────────────────────────────────── */
+header {
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+header h1 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #58a6ff;
+}
+
+#header-status {
+  font-size: 0.8rem;
+  color: #8b949e;
+}
+
+/* ── Layout ──────────────────────────────────────────────── */
+.layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ── Sidebar ─────────────────────────────────────────────── */
+.sidebar {
+  width: 200px;
+  flex-shrink: 0;
+  background: #161b22;
+  border-right: 1px solid #30363d;
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem;
+  gap: 0.75rem;
+  overflow-y: auto;
+}
+
+.sidebar h2 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #8b949e;
+  font-weight: 600;
+}
+
+#watchlist-ul {
+  list-style: none;
+  flex: 1;
+  overflow-y: auto;
+}
+
+#watchlist-ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+#watchlist-ul li:hover { background: #21262d; }
+#watchlist-ul li.active { background: #1f3a5f; color: #58a6ff; }
+
+#watchlist-ul li .ticker-name {
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+#watchlist-ul li .del-btn {
+  background: none;
+  border: none;
+  color: #6e7681;
+  cursor: pointer;
+  font-size: 0.75rem;
+  padding: 0 2px;
+  line-height: 1;
+  border-radius: 3px;
+}
+
+#watchlist-ul li .del-btn:hover { color: #f85149; }
+
+.add-row {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.add-row input {
+  flex: 1;
+  min-width: 0;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  color: #c9d1d9;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+.add-row input:focus { outline: none; border-color: #58a6ff; }
+
+.add-row button {
+  background: #238636;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  padding: 0.35rem 0.6rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.add-row button:hover { background: #2ea043; }
+
+/* ── Main Panel ──────────────────────────────────────────── */
+.main-panel {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* ── Search Bar ──────────────────────────────────────────── */
+.search-bar {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.search-bar input {
+  flex: 1;
+  max-width: 280px;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  color: #c9d1d9;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+.search-bar input:focus { outline: none; border-color: #58a6ff; }
+
+.search-bar select {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  color: #c9d1d9;
+  padding: 0.45rem 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.search-bar button {
+  background: #1f6feb;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  padding: 0.45rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.search-bar button:hover { background: #388bfd; }
+.search-bar button:disabled { background: #30363d; cursor: not-allowed; }
+
+/* ── State Messages ──────────────────────────────────────── */
+.loading {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  color: #8b949e;
+  font-size: 0.9rem;
+}
+
+.error-msg {
+  background: #3d1a1a;
+  border: 1px solid #f85149;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  color: #f85149;
+  font-size: 0.9rem;
+}
+
+/* ── Info Bar ────────────────────────────────────────────── */
+.info-bar {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+#info-ticker { font-weight: 700; font-size: 1rem; color: #58a6ff; }
+#info-price  { font-size: 0.95rem; color: #c9d1d9; }
+#info-date   { font-size: 0.8rem; color: #8b949e; }
+
+/* ── Charts ──────────────────────────────────────────────── */
+.charts-area {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.chart-wrap {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem 0.75rem;
+  position: relative;
+}
+
+.price-wrap { height: 320px; }
+.rsi-wrap   { height: 180px; }
+.macd-wrap  { height: 180px; }
+
+.chart-wrap canvas { width: 100% !important; height: 100% !important; }
+
+/* ── Signals ─────────────────────────────────────────────── */
+.signals-area {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 0.75rem;
+}
+
+.signals-area h3 {
+  font-size: 0.85rem;
+  color: #8b949e;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.no-signals { color: #8b949e; font-size: 0.85rem; }
+
+#signals-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+#signals-table th {
+  text-align: left;
+  padding: 0.4rem 0.5rem;
+  color: #8b949e;
+  border-bottom: 1px solid #30363d;
+  font-weight: 500;
+}
+
+#signals-table td {
+  padding: 0.4rem 0.5rem;
+  border-bottom: 1px solid #21262d;
+}
+
+#signals-table tr:last-child td { border-bottom: none; }
+
+.signal-buy  { color: #3fb950; font-weight: 700; }
+.signal-sell { color: #f85149; font-weight: 700; }
+
+/* ── Utilities ───────────────────────────────────────────── */
+.hidden { display: none !important; }

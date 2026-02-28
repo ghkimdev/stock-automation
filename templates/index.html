@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Dashboard</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>Stock Dashboard</h1>
+  <span id="header-status"></span>
+</header>
+
+<main class="layout">
+
+  <!-- ── Sidebar: Watchlist ── -->
+  <aside class="sidebar">
+    <h2>관심 종목</h2>
+    <ul id="watchlist-ul"></ul>
+    <div class="add-row">
+      <input id="add-input" type="text" placeholder="종목 코드..." maxlength="20">
+      <button id="add-btn">추가</button>
+    </div>
+  </aside>
+
+  <!-- ── Main Panel ── -->
+  <section class="main-panel">
+
+    <!-- Search bar -->
+    <div class="search-bar">
+      <input id="ticker-input" type="text" placeholder="종목 코드 (예: AAPL, 005930.KS)" maxlength="20">
+      <select id="period-select">
+        <option value="1mo">1개월</option>
+        <option value="3mo">3개월</option>
+        <option value="6mo">6개월</option>
+        <option value="1y" selected>1년</option>
+      </select>
+      <button id="search-btn">분석</button>
+    </div>
+
+    <!-- Loading / Error -->
+    <div id="loading" class="loading hidden">분석 중...</div>
+    <div id="error-msg" class="error-msg hidden"></div>
+
+    <!-- Info bar -->
+    <div id="info-bar" class="info-bar hidden">
+      <span id="info-ticker"></span>
+      <span id="info-price"></span>
+      <span id="info-date"></span>
+    </div>
+
+    <!-- Charts -->
+    <div id="charts-area" class="charts-area hidden">
+      <div class="chart-wrap price-wrap">
+        <canvas id="price-chart"></canvas>
+      </div>
+      <div class="chart-wrap rsi-wrap">
+        <canvas id="rsi-chart"></canvas>
+      </div>
+      <div class="chart-wrap macd-wrap">
+        <canvas id="macd-chart"></canvas>
+      </div>
+    </div>
+
+    <!-- Signals table -->
+    <div id="signals-area" class="signals-area hidden">
+      <h3>최근 매매 신호</h3>
+      <p id="no-signals" class="no-signals hidden">최근 신호 없음</p>
+      <table id="signals-table" class="hidden">
+        <thead>
+          <tr>
+            <th>날짜</th>
+            <th>신호</th>
+            <th>가격</th>
+            <th>손절</th>
+            <th>목표</th>
+            <th>사유</th>
+          </tr>
+        </thead>
+        <tbody id="signals-body"></tbody>
+      </table>
+    </div>
+
+  </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="/static/js/dashboard.js"></script>
+</body>
+</html>

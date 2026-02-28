@@ -5,6 +5,6 @@
     "platform": "claude",
     "level": "Script"
   },
-  "currentFeature": "stock-automation",
-  "phase": "design"
+  "currentFeature": null,
+  "phase": "archived"
 }

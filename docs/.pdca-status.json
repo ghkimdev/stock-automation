@@ -4,6 +4,14 @@
   "activeFeatures": [],
   "primaryFeature": null,
   "features": {
+    "stock-automation-webpage": {
+      "phase": "archived",
+      "matchRate": 93,
+      "iterationCount": 0,
+      "startedAt": "2026-02-28T00:00:00.000Z",
+      "archivedAt": "2026-02-28T00:00:00.000Z",
+      "archivedTo": "docs/archive/2026-02/stock-automation-webpage/"
+    },
     "stock-automation": {
       "phase": "completed",
       "matchRate": 93,
@@ -31,6 +39,12 @@
     {"action": "design", "feature": "stock-automation", "timestamp": "2026-02-27T00:00:00.000Z"},
     {"action": "do",     "feature": "stock-automation", "timestamp": "2026-02-27T00:00:00.000Z"},
     {"action": "check",  "feature": "stock-automation", "matchRate": 93, "timestamp": "2026-02-27T00:00:00.000Z"},
-    {"action": "report", "feature": "stock-automation", "timestamp": "2026-02-27T00:00:00.000Z"}
+    {"action": "report", "feature": "stock-automation", "timestamp": "2026-02-27T00:00:00.000Z"},
+    {"action": "plan",   "feature": "stock-automation-webpage", "timestamp": "2026-02-28T00:00:00.000Z"},
+    {"action": "design", "feature": "stock-automation-webpage", "timestamp": "2026-02-28T00:00:00.000Z"},
+    {"action": "do",     "feature": "stock-automation-webpage", "timestamp": "2026-02-28T00:00:00.000Z"},
+    {"action": "check",  "feature": "stock-automation-webpage", "matchRate": 93, "timestamp": "2026-02-28T00:00:00.000Z"},
+    {"action": "report",  "feature": "stock-automation-webpage", "timestamp": "2026-02-28T00:00:00.000Z"},
+    {"action": "archive", "feature": "stock-automation-webpage", "archivedTo": "docs/archive/2026-02/stock-automation-webpage/", "timestamp": "2026-02-28T00:00:00.000Z"}
   ]
 }
